@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Bash &#33050;&#26412;&#29983;&#25104;&#22120;</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    textarea, input { width: 100%; font-family: monospace; padding: 10px; margin-top: 10px; }
+    textarea { height: 180px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+    h2 { margin-top: 30px; }
+    label { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>Bash &#25209;&#37327;&#35775;&#38382;&#33050;&#26412;&#29983;&#25104;&#22120;</h1>
+
+  <label for="prefix">&#32593;&#22336;&#21069;&#32512;（&#20197; / &#32467;&#23614;）：</label>
+  <input id="prefix" type="text" value="https://ce.looo24.fun/ss/" />
+
+  <label for="input">&#20851;&#38190;&#35789;（&#27599;&#34892;&#19968;&#20010;）：</label>
+  <textarea id="input" placeholder="&#20363;：\n&#30333;&#33756;&#24590;&#20040;&#20570;\n&#31958;&#24515;&#33756;\n&#32418;&#28903;&#25490;&#39592;"></textarea>
+  <br>
+  <button onclick="generate()">&#29983;&#25104; Bash &#33050;&#26412;</button>
+
+  <h2>&#29983;&#25104;&#30340;&#33050;&#26412;：</h2>
+  <textarea id="output" readonly placeholder="&#28857;&#20987;&#25353;&#38062;&#21518;&#20250;&#29983;&#25104;&#33050;&#26412;..."></textarea>
+
+  <script>
+    function generate() {
+      const prefix = document.getElementById("prefix").value.trim();
+      const input = document.getElementById("input").value.trim();
+
+      if (!prefix.endsWith("/")) {
+        alert("&#32593;&#22336;&#21069;&#32512;&#24517;&#39035;&#20197; / &#32467;&#23614;！");
+        return;
+      }
+
+      if (!input) {
+        alert("&#35831;&#36755;&#20837;&#33267;&#23569;&#19968;&#20010;&#20851;&#38190;&#35789;！");
+        return;
+      }
+
+      const lines = input.split(/\r?\n/).map(line => line.trim()).filter(line => line);
+      const urlLines = lines.map(line => `"${prefix}${line}.html"`).join("\n  ");
+
+      const bashScript = `bash<<'EOF'
+# URL&#21015;&#34920;
+urls=(
+  ${urlLines}
+)
+
+# &#26085;&#24535;&#19982;&#32034;&#24341;&#25991;&#20214;
+LOG_FILE="/tmp/batch_url_access.log"
+INDEX_FILE="/tmp/url_index.txt"
+
+# &#35835;&#21462;&#19978;&#27425;&#30340;&#32034;&#24341;
+if [ -f "$INDEX_FILE" ]; then
+  index=$(cat "$INDEX_FILE")
+else
+  index=0
+fi
+
+# &#20445;&#35777;&#32034;&#24341;&#22312;&#33539;&#22260;&#20869;
+if [ "$index" -ge "\${#urls[@]}" ]; then
+  index=0
+fi
+
+# &#35775;&#38382;&#24403;&#21069;URL
+url="\${urls[\$index]}"
+echo "Accessing: \$url"
+curl -s "\$url" >> "\$LOG_FILE" 2>&1
+echo "Done. [\$((index+1))/\${#urls[@]}]"
+
+# &#35760;&#24405;&#19979;&#27425;&#32034;&#24341;
+echo \$((index+1)) > "\$INDEX_FILE"
+EOF`;
+
+      document.getElementById("output").value = bashScript;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+@charset "utf-8";
+/* ==================== 哥特风格重置 ==================== */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0;
+    font-family: "Goudy Old Style", "Times New Roman", serif;
+}
+body {
+    background: #121212 url('../images/gothic-bg.jpg') repeat;
+    line-height: 1.6;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    line-height: 30px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+}
+td {
+    line-height: 30px;
+    border: 1px solid #444;
+}
+fieldset, img {
+    border: 0 none;
+    filter: sepia(0.3) contrast(1.1) brightness(0.9);
+}
+address,caption,cite,code,dfn,em,th,var {
+    font-style: normal;
+    font-weight: normal;
+    color: #c9a66b;
+}
+ol, ul ,li {
+    list-style: none outside none;
+}
+caption, th {
+    text-align: left;
+    color: #c9a66b;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+    color: #c9a66b;
+    font-family: "Goudy Old Style", "Blackletter", serif;
+    text-shadow: 1px 1px 2px #000;
+}
+a {
+    color: #c9a66b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: #e0c070;
+    text-decoration: underline;
+}
+body,input,button,textarea,select {
+    font-size: 12px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+/* ==================== 哥特风格布局 ==================== */
+.index_mid {
+    width: 1200px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    border: 1px solid #5d3c1a;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+/* ==================== 头部样式 ==================== */
+.header {
+    float: left;
+    height: 29px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #5d3c1a;
+    width: 100%;
+    overflow: hidden;
+}
+.header p {
+    float: left;
+    line-height: 29px;
+    height: 29px;
+    color: #aaa;
+}
+.header ul {
+    float: right;
+    text-align: center;
+    width: 840px;
+}
+.header ul li {
+    float: left;
+}
+.header ul a {
+    color: #aaa;
+    font-size: 14px;
+    vertical-align: middle;
+    height: 29px;
+    line-height: 29px;
+    display: block;
+    margin-left: 12px;
+    border-right: 1px solid #444;
+    padding-right: 12px;
+}
+.header ul a.now, .header a:hover {
+    text-decoration: none;
+    color: #e0c070;
+}
+
+/* ==================== 侧边栏 ==================== */
+.side_box {
+    height: 45px;
+    width: 1070px;
+    margin: 0 auto;
+    background: #2a2a2a;
+    border-bottom: 2px solid #5d3c1a;
+}
+.side_box .logo {
+    float: left;
+    width: 210px;
+    height: 75px;
+    background: url(/images/logo.png) no-repeat;
+    margin-top: 6px;
+    filter: brightness(0.8) contrast(1.2);
+}
+.side_box .lanmu {
+    float: left;
+    background: #5d3c1a;
+    color: #e0c070;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin: 11px 0 0 15px;
+    font-size: 14px;
+    font-family: "Blackletter", serif;
+}
+.side_box .login {
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    background: #3a1c0a;
+    border-radius: 0 0 4px 4px;
+    padding: 0 10px;
+}
+.side_box .login a {
+    color: #e0c070;
+    font-size: 14px;
+}
+.side_box .login code {
+    color: #e0c070;
+    margin: 0 5px;
+}
+
+/* ==================== 搜索框 ==================== */
+.search {
+    float: left;
+    margin-top: 7px;
+    width: 235px;
+}
+.search .searchbar {
+    border: 1px solid #5d3c1a;
+    width: 180px;
+    font-size: 12px;
+    float: left;
+    height: 27px;
+    padding-left: 3px;
+    margin-top: 1px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+.search .search_results {
+    width: 50px;
+    height: 29px;
+    background: #5d3c1a;
+    color: #e0c070;
+    text-align: center;
+    font-size: 14px;
+    border: 0 none;
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+    float: right;
+}
+.search .search_results:hover {
+    background: #7a5a38;
+}
+
+/* ==================== 主要内容区域 ==================== */
+.main {
+    width: 1070px;
+    margin: 0 auto;
+    background: #2a2a2a;
+    border: 1px solid #5d3c1a;
+    padding: 15px;
+}
+.main-left {
+    float: left;
+    width: 700px;
+    margin-top: 5px;
+}
+.main-left h1 {
+    line-height: 36px;
+    font-size: 28px;
+    text-align: center;
+    margin: 8px 0px 5px;
+    color: #e0c070;
+    font-weight: bold;
+    font-family: "Blackletter", serif;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #5d3c1a;
+    padding-bottom: 10px;
+}
+.main-left .info {
+    line-height: 24px;
+    padding: 8px 0;
+    color: #aaa;
+    overflow: hidden;
+    margin: 2px auto;
+    width: 90%;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+.main-left .info span {
+    margin-right: 10px;
+}
+.main-left .info .source a {
+    color: #aaa;
+}
+.main-left .content {
+    color: #e0e0e0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    float: left;
+    padding: 15px;
+    background: #1e1e1e;
+    border: 1px solid #444;
+    margin-top: 15px;
+}
+.main-left .content p {
+    color: #e0e0e0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    padding-bottom: 12px;
+    text-indent: 2em;
+}
+.main-left .content h2 {
+    font-size: 17px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 31px;
+    clear: both;
+    color: #e0c070;
+    margin-bottom: 15px;
+    border-left: 4px solid #5d3c1a;
+    padding-left: 10px;
+}
+.main-left .content h3, .main-left .content h4 {
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 31px;
+    clear: both;
+    color: #c9a66b;
+    margin-bottom: 15px;
+}
+.main-left .content p a {
+    color: #c9a66b;
+    text-decoration: underline;
+}
+.main-left .content img {
+    max-width: 100%;
+    border: 1px solid #5d3c1a;
+    padding: 5px;
+    background: #2a2a2a;
+    margin: 15px auto;
+    display: block;
+}
+
+/* ==================== 分页 ==================== */
+.pager {
+    float: left;
+    text-align: center;
+    width: 793px;
+    margin-bottom: 10px;
+}
+.pager li {
+    border: 1px solid #5d3c1a;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #2a2a2a;
+    padding: 0 12px;
+    margin: 0 3px;
+    color: #e0c070;
+}
+.pager li:hover, .pager li.thisclass {
+    background-color: #5d3c1a;
+    border: 1px solid #7a5a38;
+    color: #fff;
+    text-decoration: none;
+}
+.thisclass {
+    color: #fff;
+    line-height: 28px;
+    padding: 0px 12px;
+    margin-right: 8px;
+    background-color: #5d3c1a;
+    font-size: 14px;
+}
+
+/* ==================== 相关文章 ==================== */
+.related_article, .hot_article {
+    width: 100%;
+    border-top: 1px solid #5d3c1a;
+    float: left;
+    overflow: hidden;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.related_article .related_top, .hot_article .hot_top {
+    float: left;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    color: #e0c070;
+    font-size: 16px;
+    font-family: "Blackletter", serif;
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
+}
+.related_article li, .hot_article li {
+    float: left;
+    width: 100%;
+    height: 24px;
+    font-size: 16px;
+    overflow: hidden;
+    line-height: 24px;
+    margin-top: 6px;
+    padding-left: 15px;
+    position: relative;
+}
+.related_article li:before, .hot_article li:before {
+    content: "†";
+    position: absolute;
+    left: 0;
+    color: #c9a66b;
+    font-size: 14px;
+}
+.related_article li a, .hot_article li a {
+    font-size: 16px;
+    color: #aaa;
+}
+.related_article li a:hover, .hot_article li a:hover {
+    color: #e0c070;
+}
+
+/* ==================== 页脚 ==================== */
+.footer {
+    width: 100%;
+    padding: 5px 0px;
+    background: #1a1a1a;
+    float: left;
+    margin-top: 15px;
+    border-top: 2px solid #5d3c1a;
+}
+.foot_box {
+    width: 1000px;
+    margin: auto;
+}
+.footer p {
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+}
+.footer p a {
+    color: #c9a66b;
+    font-weight: 700;
+    font-size: 12px;
+}
+.footer p a:hover {
+    color: #e0c070;
+}
+
+/* ==================== 哥特风格装饰元素 ==================== */
+/* 装饰性分隔线 */
+.gothic-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #5d3c1a, #c9a66b, #5d3c1a, transparent);
+    margin: 20px 0;
+    position: relative;
+}
+.gothic-divider:before {
+    content: "✠";
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    color: #c9a66b;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+/* 哥特风格按钮 */
+.gothic-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #5d3c1a;
+    color: #e0c070;
+    border: 1px solid #7a5a38;
+    border-radius: 3px;
+    font-family: "Goudy Old Style", serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.gothic-btn:hover {
+    background: #7a5a38;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 装饰性边框 */
+.decorative-border {
+    position: relative;
+    padding: 15px;
+    margin: 20px 0;
+    border: 2px solid #5d3c1a;
+    background: #2a2a2a;
+}
+.decorative-border:before, .decorative-border:after {
+    content: "†";
+    position: absolute;
+    color: #c9a66b;
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+}
+.decorative-border:before {
+    top: -12px;
+    left: 20px;
+    background: #1a1a1a;
+    padding: 0 10px;
+}
+.decorative-border:after {
+    bottom: -12px;
+    right: 20px;
+    background: #1a1a1a;
+    padding: 0 10px;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 960px) {
+    body {
+        width: 100%;
+        margin: 6px auto;
+        background: #121212;
+    }
+    .main, .header, .main-left, .content, .article, .info, .related_article, .hot_article, .pager, .previous, .source_url, .side_box, .sidebar {
+        width: 96%;
+        margin: 0px auto;
+    }
+    .main {
+        width: 96%;
+        background: #1a1a1a;
+        border: 1px solid #5d3c1a;
+    }
+    .main img {
+        width: 96%;
+        max-width: 100%;
+    }
+    .header {
+        background: #1a1a1a;
+        border-bottom: 1px solid #5d3c1a;
+    }
+    .g-top {
+        width: 100%;
+        height: 49px;
+        background: #1a1a1a;
+        box-shadow: 0 2px 3px #000;
+        display: -webkit-box;
+        overflow: hidden;
+        padding: 0 50px 0 0;
+        box-sizing: border-box;
+        position: fixed;
+        zoom: 1;
+        z-index: 1;
+        border-bottom: 1px solid #5d3c1a;
+    }
+    .g-top .u-logo {
+        color: #e0c070;
+    }
+    .g-top .m-search {
+        background: #2a2a2a;
+    }
+    .g-top .m-search .m_txtSearch {
+        color: #e0e0e0;
+    }
+}
+
+/* ==================== 哥特字体定义 ==================== */
+@font-face {
+    font-family: 'Blackletter';
+    src: url('../fonts/blackletter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

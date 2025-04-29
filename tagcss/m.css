@@ -1,0 +1,132 @@
+﻿/* 通用样式 */
+body {
+  overflow-x: hidden;
+}
+.box,
+article {
+  width: 100%;
+}
+
+/* 统一广告栏高度 */
+.ad-big,
+.ad-small {
+  height: 180px;
+  overflow: hidden;
+}
+.ad-small {
+  height: 120px;
+}
+
+/* 首页产品推荐样式限制显示数量 */
+.product-suiji li:nth-child(n+5),
+.product-list li:nth-child(n+9),
+.pics-list li:nth-child(n+5),
+.pics-list-price li:nth-child(n+5),
+.pic-list-img li:nth-child(n+5),
+.index-tj li:nth-child(n+9),
+.foot-list li:nth-child(n+5),
+.menu-list li:nth-child(n+9) {
+  display: none;
+}
+
+/* icon 公用样式 */
+.iconfont {
+  font-family: "iconfont";
+}
+
+/* 广告图等高 */
+.pic-list-img li i,
+.pics-list-price li i {
+  height: 110px;
+  line-height: 110px;
+}
+
+/* 图片列表统一高度 */
+.pics-list li i {
+  height: 150px;
+  line-height: 150px;
+}
+.pic-txt-img li i {
+  height: 130px;
+  line-height: 130px;
+}
+
+/* 多列布局统一边距 */
+.index-tj li,
+.foot-list li,
+.menu-list li,
+.product-suiji li,
+.product-list li,
+.pics-list li,
+.pics-list-price li,
+.pic-list-img li {
+  margin: 0 5px 10px;
+}
+
+/* 图文列表显示控制 */
+.pic-txt-img li:nth-child(n+5) {
+  display: none;
+}
+
+/* ---------- 响应式布局 ---------- */
+
+/* 超小屏：<480px */
+@media screen and (max-width: 479px) {
+  .nav,
+  .footer,
+  .banner {
+    display: none;
+  }
+  .box,
+  article {
+    width: 100%;
+  }
+  .ad-big {
+    height: 120px;
+  }
+}
+
+/* 小屏：480px–767px */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .nav,
+  .footer {
+    display: none;
+  }
+  .box,
+  article {
+    width: 100%;
+  }
+}
+
+/* 平板：768px–959px */
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .box,
+  article {
+    width: 100%;
+  }
+}
+
+/* 小桌面：960px–1023px */
+@media screen and (min-width: 960px) and (max-width: 1023px) {
+  .box,
+  article {
+    width: 100%;
+  }
+}
+
+/* 普通桌面：1024px–1170px */
+@media screen and (min-width: 1024px) and (max-width: 1170px) {
+  .box,
+  article {
+    width: 100%;
+  }
+}
+
+/* 宽屏桌面：>1170px */
+@media screen and (min-width: 1171px) {
+  .box,
+  article {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
